@@ -26,5 +26,12 @@ router.post("/post", async (req, res) => {
     })
   }
 });
+router.get("/",async (req,res)=>{
+    const allUsers = await User.find();
+    res.status(200).json({
+        message:"Yup",
+        allUsers
+    })
+})
 
 module.exports = router
